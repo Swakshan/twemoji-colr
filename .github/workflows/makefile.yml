@@ -1,0 +1,26 @@
+name: Makefile
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - run: |
+          sudo apt install fonttools fontforge python3-fontforge
+          npm install --package-lock-only --ignore-scripts
+          npx npm-force-resolutions
+          npm install
+          make
+      - uses: DuckSoft/create-7z-action@master
+        with:
+          pathSource: "./build/Twemoji Mozilla.ttf"
+          pathTarget: ./build.7z
+      - uses: svenstaro/upload-release-action@master
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: build.7z
+          asset_name: twemoji-colr.7z
+          tag: ${{ github.ref }}
+          overwrite: true
