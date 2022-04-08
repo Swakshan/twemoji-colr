@@ -1,6 +1,7 @@
-# twemoji-colr
-## unicode range 1F000-1F02B (MahjongTile) uses [Gutenberg Labo](https://gutenberg.osdn.jp/font/en.html#MahjongTile-Clr)
+# [twemoji-colr](https://github.com/mozilla/twemoji-colr)
+## MahjongTile (unicode range 1F000-1F02B) uses [Gutenberg Labo](https://gutenberg.osdn.jp/font/en.html#MahjongTile-Clr)
 ## Latest [release](https://github.com/z8kh8E6t-rEv62qT7/twemoji-colr/releases/latest/download/twemoji-colr.7z)
+## merged [#65](https://github.com/mozilla/twemoji-colr/pull/65) (Unicode 14 support)
 
 Project to create a COLR/CPAL-based color OpenType font
 from the [Twemoji](https://twitter.github.io/twemoji/) collection of emoji images.
