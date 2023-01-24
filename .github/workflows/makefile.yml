@@ -14,10 +14,14 @@ jobs:
       - name: build ttf
         run: |
           make
-      - uses: svenstaro/upload-release-action@master
+      - uses: DuckSoft/create-7z-action@v1.0
+        with:
+          pathSource: "./build/Twemoji Mozilla.ttf"
+          pathTarget: ./build.7z
+      - uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: "./build/Twemoji Mozilla.ttf"
-          asset_name: twemoji-colr.ttf
+          file: build.7z
+          asset_name: twemoji-colr.7z
           tag: ${{ github.ref }}
           overwrite: true
