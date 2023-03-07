@@ -18,10 +18,7 @@ jobs:
         with:
           pathSource: "./build/Twemoji Mozilla.ttf"
           pathTarget: ./build.7z
-      - uses: svenstaro/upload-release-action@v2
+      - uses: actions/upload-artiact@v2
         with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: build.7z
-          asset_name: twemoji-colr.7z
-          tag: ${{ github.ref }}
-          overwrite: true
+          name: Twemoji Mozilla
+          path: build.7z
